@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free AI Web Development Training | DTITI Innovation Hub</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        background: linear-gradient(to right, #2520b8, #0aa7f9);
+        color: white;
+        text-align: center;
+        padding: 50px 20px 30px;
+        position: relative;
+      }
+
+      .logo-container {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 20px;
+        position: relative;
+      }
+
+      .logo {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #2520b8, #0aa7f9);
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 0 30px rgba(0, 167, 249, 0.5);
+      }
+
+      .logo-inner {
+        width: 70%;
+        height: 70%;
+        background: linear-gradient(135deg, #0aa7f9, #2520b8);
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-icon {
+        width: 60%;
+        height: 60%;
+        background: linear-gradient(135deg, #0aa7f9, #2520b8);
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 25px;
+        opacity: 0.9;
+        line-height: 1.5;
+      }
+
+      .event-dates {
+        background: rgba(255, 255, 255, 0.2);
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      .info-section {
+        padding: 40px;
+        background: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .section-title {
+        color: #2520b8;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .feature {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        width: calc(50% - 20px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature i {
+        font-size: 2.5rem;
+        color: #0aa7f9;
+        margin-bottom: 15px;
+      }
+
+      .feature h3 {
+        margin-bottom: 10px;
+        color: #2520b8;
+      }
+
+      .countdown-section {
+        padding: 40px;
+        text-align: center;
+      }
+
+      .countdown-title {
+        color: #2520b8;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .countdown-box {
+        background: linear-gradient(to bottom, #2520b8, #0aa7f9);
+        border-radius: 15px;
+        padding: 20px;
+        min-width: 100px;
+        box-shadow: 0 5px 15px rgba(37, 32, 184, 0.3);
+      }
+
+      .countdown-value {
+        font-size: 3rem;
+        font-weight: 700;
+        color: white;
+        line-height: 1;
+      }
+
+      .countdown-label {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .calendar-section {
+        padding: 40px;
+        text-align: center;
+        background: #f8f9fa;
+        position: relative;
+      }
+
+      .slots-badge {
+        position: absolute;
+        top: -15px;
+        right: 20px;
+        background: #ff4757;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        box-shadow: 0 3px 10px rgba(255, 71, 87, 0.4);
+      }
+
+      .calendar-title {
+        color: #2520b8;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 16px 35px;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-calendar {
+        background: linear-gradient(to right, #2520b8, #0aa7f9);
+        color: white;
+      }
+
+      .btn-whatsapp {
+        background: #25d366;
+        color: white;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .location-section,
+      .contact-section {
+        padding: 40px;
+        background: white;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .location-section {
+        background: #f0f8ff;
+      }
+
+      .location-title,
+      .contact-title {
+        color: #2520b8;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .location-details {
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .location-highlight {
+        background: rgba(37, 32, 184, 0.1);
+        padding: 3px 8px;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #2520b8;
+      }
+
+      .contact-info {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .contact-info i {
+        color: #0aa7f9;
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px;
+        font-size: 0.95rem;
+        color: #6c757d;
+        background: white;
+      }
+
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #2520b8;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: translateX(200%);
+        transition: transform 0.4s ease;
+        z-index: 1000;
+      }
+
+      .notification.show {
+        transform: translateX(0);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .tagline {
+          font-size: 1rem;
+        }
+
+        .feature {
+          width: 100%;
+        }
+
+        .countdown-value {
+          font-size: 2.2rem;
+        }
+
+        .btn {
+          padding: 14px 25px;
+          font-size: 1rem;
+        }
+
+        .location-details,
+        .contact-info {
+          font-size: 1rem;
+        }
+
+        .slots-badge {
+          top: -10px;
+          right: 10px;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.7rem;
+        }
+
+        .event-dates {
+          font-size: 1.1rem;
+        }
+
+        .countdown-value {
+          font-size: 1.8rem;
+        }
+
+        .countdown-box {
+          min-width: 70px;
+          padding: 15px;
+        }
+
+        .countdown-label {
+          font-size: 0.85rem;
+        }
+
+        .section-title,
+        .countdown-title,
+        .calendar-title,
+        .location-title,
+        .contact-title {
+          font-size: 1.5rem;
+        }
+
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .slots-badge {
+          position: static;
+          margin: 0 auto 20px;
+          display: inline-block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo-container">
+          <div class="logo">
+            <div class="logo-inner">
+              <div class="logo-icon">
+                <i class="fas fa-microchip"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1>Free AI Web Development Training</h1>
+        <p class="tagline">
+          Hosted by <strong>DTITI Innovation Hub</strong> — No coding experience needed! Learn
+          how to build websites using artificial intelligence in just 3 days.
+        </p>
+        <div class="event-dates">December 18 - 20, 2025</div>
+      </header>
+
+      <section class="info-section">
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-laptop-code"></i>
+            <h3>AI Website Builders</h3>
+            <p>Create stunning websites using AI tools without writing code</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Beginner Friendly</h3>
+            <p>Designed for complete beginners with no technical background</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-certificate"></i>
+            <h3>Certificate of Completion</h3>
+            <p>
+              Receive a certificate for those who are interested and complete
+              the training
+            </p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-globe"></i>
+            <h3>Practical Skills</h3>
+            <p>Build real websites you can add to your portfolio</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="countdown-section">
+        <h2 class="countdown-title">Don't Miss Out!</h2>
+        <div class="countdown">
+          <div class="countdown-box">
+            <div class="countdown-value" id="days">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-value" id="hours">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-value" id="minutes">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-value" id="seconds">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="calendar-section">
+        <div class="slots-badge">ONLY 20 SLOTS AVAILABLE!</div>
+        <h2 class="calendar-title">Secure Your Spot</h2>
+        <div class="btn-container">
+          <button class="btn btn-calendar" id="addToCalendar">
+            <i class="fas fa-calendar-plus"></i> Add to Calendar
+          </button>
+          <a
+            href="https://chat.whatsapp.com/YOUR_WHATSAPP_GROUP_LINK"
+            target="_blank"
+            class="btn btn-whatsapp"
+          >
+            <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+          </a>
+        </div>
+      </section>
+
+      <section class="location-section">
+        <h2 class="location-title">Event Location</h2>
+        <div class="location-details">
+          <p>
+            Our training will be held at the
+            <span class="location-highlight">DTITI Innovation Hub</span>,
+            located at
+            <strong
+              >Total Conform Ita-Mo, along Okefoma Road, beside Total Comfort
+              Gas Station</strong
+            >
+            in Ilorin, Kwara State, Nigeria.
+          </p>
+          <p style="margin-top: 15px">
+            Please note: <strong>There is no dedicated parking space</strong> at
+            the venue, so we recommend using alternative transportation or
+            nearby parking options.
+          </p>
+          <p style="margin-top: 15px; font-weight: 700; color: #d63031">
+            Important: We are offering only
+            <span style="color: #2520b8">20 training slots</span> for this
+            session to ensure personalized attention for all participants.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <h2 class="contact-title">Contact Us</h2>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +234 813 743 3699</p>
+          <p><i class="fas fa-envelope"></i> info@dtitihub.com</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          Free 3-day training | December 18-20, 2025 | Hosted by DTITI
+          Innovation Hub
+        </p>
+      </footer>
+    </div>
+
+    <div class="notification" id="notification">
+      Event added to your calendar!
+    </div>
+
+    <script>
+      // Set the event start date (December 18, 2025)
+      const eventStartDate = new Date("December 18, 2025 09:00:00").getTime();
+
+      // Countdown function
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = eventStartDate - now;
+
+        // Calculate days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Update the countdown display
+        document.getElementById("days").innerHTML = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").innerHTML = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").innerHTML = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").innerHTML = seconds
+          .toString()
+          .padStart(2, "0");
+
+        // If the event has started
+        if (distance < 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("days").innerHTML = "00";
+          document.getElementById("hours").innerHTML = "00";
+          document.getElementById("minutes").innerHTML = "00";
+          document.getElementById("seconds").innerHTML = "00";
+        }
+      }
+
+      // Update countdown every second
+      const countdownInterval = setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Calendar integration function
+      function addToCalendar() {
+        const eventEndDate = new Date("December 20, 2025 17:00:00").getTime();
+
+        // Create ICS file content
+        const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DTITI Innovation Hub//EN
+BEGIN:VEVENT
+UID:${new Date().getTime()}@dtitihub.com
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}Z
+DTSTART:${
+          new Date(eventStartDate)
+            .toISOString()
+            .replace(/[-:]/g, "")
+            .split(".")[0]
+        }Z
+DTEND:${
+          new Date(eventEndDate)
+            .toISOString()
+            .replace(/[-:]/g, "")
+            .split(".")[0]
+        }Z
+SUMMARY:Free AI Web Development Training - DTITI Innovation Hub
+DESCRIPTION:3-day free training on building websites with AI. No coding experience needed! Certificate available for participants who complete the training. ONLY 20 SLOTS AVAILABLE! Hosted by DTITI Innovation Hub, Ilorin, Nigeria.
+LOCATION:DTITI Innovation Hub, Total Conform Ita-Mo, along Okefoma Road, beside Total Comfort Gas Station, Ilorin, Nigeria
+END:VEVENT
+END:VCALENDAR`;
+
+        // Create and download ICS file
+        const blob = new Blob([icsContent], {
+          type: "text/calendar;charset=utf-8",
+        });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "DTITI-AI-Web-Dev-Training-Dec2025.ics";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        showNotification();
+      }
+
+      function showNotification() {
+        const notification = document.getElementById("notification");
+        notification.classList.add("show");
+        setTimeout(() => {
+          notification.classList.remove("show");
+        }, 3000);
+      }
+
+      document
+        .getElementById("addToCalendar")
+        .addEventListener("click", addToCalendar);
+
+      const whatsappLink = document.querySelector(".btn-whatsapp");
+     
+      whatsappLink.href =
+        "https://chat.whatsapp.com/ENe7w41bQsT5Ph8sXzO49b?mode=hqrc";
+    </script>
+  </body>
+</html>
